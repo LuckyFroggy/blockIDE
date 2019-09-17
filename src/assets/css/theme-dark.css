@@ -1,0 +1,7 @@
+@charset"UTF-8";
+.monaco-editor, .monaco-editor-background, .monaco-editor .inputarea.ime-input{
+    background: transparent !important;
+}
+.monaco-editor .margin{
+    background: transparent !important;
+}
