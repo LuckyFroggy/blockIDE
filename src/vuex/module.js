@@ -1,7 +1,7 @@
 import * as types from './types'
 const state = {
   html: '',
-  css:'',
+  less:'',
   js:'',
   codeKey:''//存入缓存的key
  
@@ -10,8 +10,8 @@ const mutations = {
   [types.html](state, string) {
     state.html = string
   },
-  [types.css](state, string) {
-    state.css = string
+  [types.less](state, string) {
+    state.less = string
   },
   [types.js](state, string) {
     state.js = string
@@ -29,10 +29,10 @@ const actions = {
   }, string) {
     commit(types.html, string)
   },
-  css({
+  less({
     commit
   }, string) {
-    commit(types.css, string)
+    commit(types.less, string)
   },
   js({
     commit

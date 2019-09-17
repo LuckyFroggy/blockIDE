@@ -27,7 +27,7 @@
             <section class="windowLabelCont">
                 CSS
             </section>
-            <CodeEditor :codes="codeCss" language="css" id="css" @onCodeChange="onCodeChange"></CodeEditor>
+            <CodeEditor :codes="codeCss" language="less" id="less" @onCodeChange="onCodeChange"></CodeEditor>
           </div>
         </div>
         <div class="gutter gutter-vertical" style="height: 1px;"></div>
@@ -71,7 +71,7 @@ export default {
   mounted() {
    this.$store.commit('html',this.codeHtml);
    this.$store.commit('js',this.codeJs);
-   this.$store.commit('css',this.codeCss);
+   this.$store.commit('less',this.codeCss);
 
     
   },
@@ -89,7 +89,7 @@ export default {
       let params = {
         codeTree:{
           html: this.$store.state.html,
-          css: this.$store.state.css,
+          less: this.$store.state.less,
           js: this.$store.state.js,
         },
         codeKey:this.$store.state.codeKey
