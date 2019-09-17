@@ -62,9 +62,9 @@ export default {
 
       this.$nextTick(() => {
         self.editors = monaco.editor.create(self.$refs[this.id], {
+          ...self.editorOptions,
           value: self.codes,
           language: self.language,
-          ...self.editorOptions
         });
         //   self.$emit("onMounted", editors); //编辑器创建完成回调
         self.editors.onKeyUp((event)=>{
