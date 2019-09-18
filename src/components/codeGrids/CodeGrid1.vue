@@ -25,7 +25,7 @@
         <div class="panel-h panel" style="height: calc(50% - 0.5px);">
           <div class="panel-wrap">
             <section class="windowLabelCont">
-                CSS
+                LESS
             </section>
             <CodeEditor :codes="codeCss" language="less" id="less" @onCodeChange="onCodeChange"></CodeEditor>
           </div>
@@ -33,7 +33,7 @@
         <div class="gutter gutter-vertical" style="height: 1px;"></div>
         <div class="panel-h panel resultsPanel" style="height: calc(50% - 0.5px);">
           <div class="panel-wrap">
-            <iframe ref="previewFrame" id="previewFrame" name="previewFrame" src="http://127.0.0.1:7001/api/display" allow="midi *; geolocation *; microphone *; camera *; encrypted-media *;" sandbox="allow-top-navigation allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation" allowfullscreen allowpaymentrequest frameborder="0" ></iframe>
+            <iframe ref="previewFrame" id="previewFrame" name="previewFrame" src="http://127.0.0.1:7001/api/display?key=''" allow="midi *; geolocation *; microphone *; camera *; encrypted-media *;" sandbox="allow-top-navigation allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation" allowfullscreen allowpaymentrequest frameborder="0" ></iframe>
           </div>
         </div>
       </div>
@@ -95,7 +95,7 @@ export default {
         codeKey:this.$store.state.codeKey
       };
       this.$https
-        .fetchPost("/api/show", params)
+        .fetchPost("/api/edit", params)
         .then(data => {
           console.log(data);
           _this.$refs.previewFrame.setAttribute(
